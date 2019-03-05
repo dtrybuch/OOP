@@ -1,2 +1,2 @@
 # OOP
-The Object-Oriented Programming which I have at the studies of Applied Computer Science.
+The Object-Oriented Programming exercises which I have at the fourth semester of  Applied Computer Science at the University of Science and Technology.
