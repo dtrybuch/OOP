@@ -1,13 +1,17 @@
-cmake_minimum_required(VERSION 3.7.2)
-
+cmake_minimum_required(VERSION 2.8.9)
 project (mtest)
 
-include_directories(include)
+set(CMAKE_BUILD_TYPE Debug)
 
-add_compile_options(-Wall -g)
+# prevent for in-source building
+set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
+set(CMAKE_DISABLE_SOURCE_CHANGES ON)
+if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
+message(SEND_ERROR "In-source builds are not allowed.")
+endif ()
 
-set(CMAKE_CXX_FLAGS "-std=c++11") 
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
-set(SOURCES mtest.cpp Urzadzenia.cpp Urzadzenia.h)
+file(GLOB SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} mtest.cpp ${SOURCES})

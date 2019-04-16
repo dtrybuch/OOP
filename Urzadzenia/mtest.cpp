@@ -42,7 +42,7 @@ int main() {
   ptrPrint(s);
   print(s);
   std::cout << s->Skaner::rodzaj() << std::endl;
-  // std::cout << s->Urzadzenie::rodzaj()  << std::endl; // z tym kodem ma sie nie z-linkowac
+  //std::cout << s->Urzadzenie::rodzaj()  << std::endl; // z tym kodem ma sie nie z-linkowac
   ptrPrint(dynamic_cast<const Papierozerne*>(k));
   
   std::cout << d->rozdzielczosc() << std::endl;
